@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "autoaim",
+  "version": "${version}",
+  "name": "AutoAim",
+  "description": "Client-side aim assist: when a hostile mob is within 3 blocks, your view locks onto its hitbox. Toggle via keybinds.",
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": ["com.example.autoaim.AutoAimClient"]
+  },
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "minecraft": "1.21.1",
+    "fabric-api": "*"
+  }
+}

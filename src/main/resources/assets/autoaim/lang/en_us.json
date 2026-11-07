@@ -2,5 +2,5 @@
   "key.autoaim.toggle": "Toggle AutoAim (an/aus)",
   "key.autoaim.enable": "AutoAim einschalten",
   "key.autoaim.disable": "AutoAim ausschalten",
-  "category.autoaim": "AutoAim"
+  "key.category.autoaim.main": "AutoAim"
 }

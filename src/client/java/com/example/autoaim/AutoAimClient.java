@@ -10,6 +10,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.text.Text;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
@@ -23,6 +24,9 @@ public class AutoAimClient implements ClientModInitializer {
     private static final boolean TARGET_HOSTILE = true;
     private static final boolean TARGET_PLAYERS = false;
 
+    private static final KeyBinding.Category CATEGORY =
+            KeyBinding.Category.create(Identifier.of("autoaim", "main"));
+
     private static KeyBinding toggleKey;
     private static KeyBinding enableKey;
     private static KeyBinding disableKey;
@@ -34,21 +38,21 @@ public class AutoAimClient implements ClientModInitializer {
                 "key.autoaim.toggle",
                 InputUtil.Type.KEYSYM,
                 GLFW.GLFW_KEY_R,
-                "category.autoaim"
+                CATEGORY
         ));
 
         enableKey = KeyBindingHelper.registerKeyBinding(new KeyBinding(
                 "key.autoaim.enable",
                 InputUtil.Type.KEYSYM,
                 GLFW.GLFW_KEY_UNKNOWN,
-                "category.autoaim"
+                CATEGORY
         ));
 
         disableKey = KeyBindingHelper.registerKeyBinding(new KeyBinding(
                 "key.autoaim.disable",
                 InputUtil.Type.KEYSYM,
                 GLFW.GLFW_KEY_UNKNOWN,
-                "category.autoaim"
+                CATEGORY
         ));
 
         ClientTickEvents.END_CLIENT_TICK.register(this::onTick);
